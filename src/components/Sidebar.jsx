@@ -3,15 +3,13 @@ import React from "react";
 
 import { categories } from "../utils/constants";
 
-const Sidebar = () => {
-  const selectedCategory = "New";
-
+const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
   return (
     <Stack
       direction={"row"}
       sx={{
         overflowY: "auto",
-        height: { sx: "auto", md: "91%" },
+        height: { sx: "auto", md: "93.3%" },
         flexDirection: { md: "column" },
       }}
     >
@@ -19,10 +17,11 @@ const Sidebar = () => {
         <button
           className="category-btn"
           style={{
-            background: `${category.name === selectedCategory && "#FC1503"}`,
+            background: category.name === selectedCategory && "#FC1503",
             color: "white",
           }}
           key={category.name}
+          onClick={() => setSelectedCategory(category.name)}
         >
           <span
             style={{
