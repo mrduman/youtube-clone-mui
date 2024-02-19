@@ -61,7 +61,7 @@ const Feed = () => {
           sx={{
             width: "100%",
             overflowY: "auto",
-            height: "90vh",
+            height: "5vh",
             flex: 2,
             mt: "20px",
           }}
