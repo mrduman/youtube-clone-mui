@@ -12,25 +12,17 @@ a {
 
 ::-webkit-scrollbar {
   width: 0px;
-  height: 5px;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(114, 113, 113);
   border-radius: 10px;
-  height: 200px;
 }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-.category-btn:hover {
-  background-color: #fc1503 !important;
-  color: white !important;
-}
-
+.category-btn:hover,
 .category-btn:hover span {
+  background-color: #fc1503 !important;
   color: white !important;
 }
 
@@ -50,12 +42,11 @@ a {
   text-transform: capitalize;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start; /* Updated for better support */
   cursor: pointer;
   background: transparent;
   outline: none;
   border: none;
-
   padding: 7px 15px;
   margin: 10px 0px;
   border-radius: 20px;
