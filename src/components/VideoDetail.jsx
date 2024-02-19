@@ -17,7 +17,9 @@ const VideoDetail = () => {
       const videoDetailsData = await fetchFromAPI(
         `videos?part=snippet,statistics&id=${id}`
       );
-      setVideoDetail(videoDetailsData.items[0]);
+      if (videoDetailsData.items && videoDetailsData.items.length > 0) {
+        setVideoDetail(videoDetailsData.items[0]);
+      }
 
       const videoData = await fetchFromAPI(
         `search?part=snippet&relatedToVideoId=${id}&type=video`
@@ -57,7 +59,9 @@ const VideoDetail = () => {
             >
               <Link to={`/channel/${channelId}`}>
                 <Typography
-                  variant={{ sm: "subtitle1", md: "h6" }}
+                  sx={{
+                    fontSize: { sm: "subtitle1.fontSize", md: "h6.fontSize" },
+                  }}
                   color="#fff"
                 >
                   {channelTitle}
